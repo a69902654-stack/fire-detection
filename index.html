@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>سیستم اعلام حریق | راه‌اندازی اولیه</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="setupModal" class="setup-overlay">
+    <div class="setup-card">
+        <h2> راه‌اندازی اولیه</h2>
+        <p>لطفاً اطلاعات تلگرام خود را وارد کنید تا در صورت تشخیص حریق، پیام هشدار دریافت کنید.</p>
+        
+        <div class="input-field">
+            <label> توکن بات تلگرام</label>
+            <input type="text" id="setupBotToken" placeholder="مثال: 1234567890:ABCdefGHIjklmNOPqrstUvwxyz">
+        </div>
+        
+        <div class="input-field">
+            <label> آیدی عددی خود</label>
+            <input type="text" id="setupChatId" placeholder="مثال: 123456789">
+        </div>
+        
+        <div class="input-field">
+            <label> آدرس دوربین پیشفرض</label>
+            <input type="text" id="setupCameraIp" placeholder="http://192.168.1.3:8080/video" value="http://192.168.1.3:8080/video">
+        </div>
+        
+        <button id="saveSetupBtn" class="setup-btn" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> شروع و ذخیره اطلاعات</button>
+        <div class="note">⚠️ اطلاعات به درستی وارد شود .</div>
+    </div>
+</div>
+
+<!-- صفحه اصلی برنامه -->
+<div id="mainApp" class="main-app">
+<div class="wrap">
+    <div class="main-header">
+        <div class="title"><span></span> شناسایی آتش</div>
+        <div class="ctrl-bar">
+            <span class="badge" id="totalCamsBadge">0 دوربین</span>
+            <button id="stopAllBtn" class="btn btn-danger">⏹️ توقف همه</button>
+        </div>
+    </div>
+
+    <div class="sms-panel">
+        <div class="telegram-status" id="telegramStatus">
+            🔄 در حال بارگذاری وضعیت...
+        </div>
+    </div>
+
+    <div class="add-panel">
+        <span style="color: white;">➕ افزودن دوربین:</span>
+        <input type="text" id="newIpInput" placeholder="192.168.1.3:8080 یا http://192.168.1.3:8080/video">
+        <button id="addCamBtn" class="btn btn-success">➕ اضافه کن</button>
+        <button id="addDefaultBtn" class="btn btn-info"> پیشفرض</button>
+    </div>
+
+    <div class="cam-grid" id="camGrid"></div>
+    
+    <div class="log-area" id="logArea">
+        [سیستم] آماده به کار - منتظر اتصال دوربین‌ها...
+    </div>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
