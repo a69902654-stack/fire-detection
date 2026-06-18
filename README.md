@@ -93,7 +93,6 @@ A Persian translation
 
 Or a version for a specific platform (e.g., Telegram bot, mobile app)
 
-I'm happy to tailor it further! 🚀
 
 ## Run Locally
 
